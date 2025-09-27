@@ -61,15 +61,16 @@ function miniKiwi(): Familiar {
     : $familiar.none;
 }
 
-function trainbot(): Familiar {
+function trainbot(allowAttackingFamiliars = true): Familiar {
   return have($familiar`Mini-Trainbot`)
     ? $familiar`Mini-Trainbot`
     : $familiar.none;
 }
 
 export function chooseFamiliar(allowAttackingFamiliars = true): Familiar {
-  const defaultFam = have($familiar`Cookbookbat`) ? $familiar`Cookbookbat` : $familiar.none;
+  const defaultFam = have($familiar`Mini-Trainbot`) ? $familiar`Mini-Trainbot` : $familiar.none;
   const familiars = [
+    trainbot,
     cookbookbat,
     shorterOrderCook,
     garbageFire,
@@ -80,7 +81,6 @@ export function chooseFamiliar(allowAttackingFamiliars = true): Familiar {
     hoboInSheepsClothing,
     miniKiwi,
     sombrero,
-    trainbot,
   ]
     .map((fn) => fn(allowAttackingFamiliars))
     .filter((fam) => haveAndNotExcluded(fam));
