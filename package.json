@@ -1,5 +1,5 @@
 {
-  "name": "instantsccs",
+  "name": "instantsccs2",
   "version": "1.1.0",
   "description": "A low shiny SCCS script",
   "main": "instantsccs",
@@ -42,7 +42,7 @@
   },
   "author": "Pantocyclus",
   "license": "MIT",
-  "repository": "git+https://github.com/Pantocyclus/InstantSCCS.git",
+  "repository": "git+https://https://github.com/bigbongobeats/InstantSCCS2.git",
   "keywords": [
     "KoLMafia",
     "JS",
