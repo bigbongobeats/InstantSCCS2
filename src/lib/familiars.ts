@@ -57,6 +57,12 @@ export function melodramedary(): Familiar {
     : $familiar.none;
 }
 
+function trainbot(): Familiar {
+  return have($familiar`Mini-Trainbot`)
+    ? $familiar`Mini-Trainbot`
+    : $familiar.none;
+}
+
 function hoboInSheepsClothing(): Familiar {
   return haveAndNotExcluded($familiar`Hobo in Sheep's Clothing`) && !have($item`grubby wool`, 2)
     ? $familiar`Hobo in Sheep's Clothing`
@@ -81,9 +87,10 @@ export function chooseFamiliar(allowAttackingFamiliars = true): Familiar {
     optimisticCandle,
     rockinRobin,
     melodramedary,
+    trainbot,
     hoboInSheepsClothing,
     miniKiwi,
-    sombrero,
+    
   ]
     .map((fn) => fn(allowAttackingFamiliars))
     .filter((fam) => haveAndNotExcluded(fam));
